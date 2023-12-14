@@ -154,7 +154,8 @@ class ThjBotAPI:
             for event in self.chat_stream(messages, context_id=context_id, model=model):
                 response += event
                 self.socketio.emit('message', {'message': event, 'connection_id': connection_id}, room=user_id)
-
+            if self.verbosity >= 1:
+                print(response)
             self.socketio.emit('message_complete', {'message_completed': True, 'connection_id': connection_id, 'message': response.replace('[START_OF_STREAM]','')}, room=user_id)
             return jsonify(response)
         
