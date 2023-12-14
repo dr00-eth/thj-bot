@@ -1,3 +1,4 @@
-# thj-bot
+# thj-bot v0.1
 
-the beginning of something great
+
+Requirement: Specify environment variable OPENAI_KEY to contain chatgpt key
